@@ -1,4 +1,5 @@
 bookdown::gitbook:
+  #base_format: distill::distill_article
   css: style.css
   includes:
     in_header: # google_analytics.html
@@ -11,8 +12,9 @@ bookdown::gitbook:
       after: |
         <li><a href="https://michaelmccarthy.netlify.app" target="blank">Michael McCarthy</a></li>
     edit: https://github.com/mccarthy-m-g/bookdown-thesis-template/edit/master/%s
-    download: ["pdf", "word"]
+    download: ["pdf", "docx"]
 bookdown::pdf_book:
+  # base_format: distill::distill_article
   pandoc_args: [ "--csl", "apa.csl" ]
   includes:
     in_header: preamble.tex
