@@ -2,7 +2,7 @@ bookdown::gitbook:
   #base_format: distill::distill_article
   css: style.css
   includes:
-    in_header: # google_analytics.html
+    in_header: ["www/header.html"] # google_analytics.html
   pandoc_args: [ "--csl", "apa.csl" ]
   config:
     toc:
