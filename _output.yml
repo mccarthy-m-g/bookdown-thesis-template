@@ -1,0 +1,26 @@
+bookdown::gitbook:
+  css: style.css
+  includes:
+    in_header: # google_analytics.html
+  pandoc_args: [ "--csl", "apa.csl" ]
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><strong><a href="./">Bookdown Thesis Template</a></strong></li>
+      after: |
+        <li><a href="https://michaelmccarthy.netlify.app" target="blank">Michael McCarthy</a></li>
+    edit: https://github.com/mccarthy-m-g/bookdown-thesis-template/edit/master/%s
+    download: ["pdf"]
+bookdown::pdf_book:
+  pandoc_args: [ "--csl", "apa.csl" ]
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: none
+  keep_tex: yes
+  extra_dependencies: ["flafter"]
+  df_print: kable
+bookdown::epub_book:
+  stylesheet: style.css
+  pandoc_args: [ "--csl", "apa.csl" ]

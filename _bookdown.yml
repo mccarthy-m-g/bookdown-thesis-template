@@ -1,0 +1,23 @@
+book_filename: "bookdown-thesis-template"
+language:
+  ui:
+    chapter_name: " "
+delete_merged_file: true
+
+new_session: yes
+
+rmd_files: [
+  index.Rmd,
+  preface.Rmd,
+
+  getting-started.Rmd,
+  web-publishing.Rmd,
+  writing-in-bookdown.Rmd,
+
+  introduction.Rmd,
+
+  references.Rmd,
+]
+
+before_chapter_script: "_common.R"
+after_chapter_script:

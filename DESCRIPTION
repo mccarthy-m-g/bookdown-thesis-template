@@ -1,0 +1,6 @@
+Package: bookdown-thesis-template
+Type: Book
+Title: Bookdown Thesis Template
+Version: 0.0.1
+Imports: 
+Remotes: rstudio/bookdown
