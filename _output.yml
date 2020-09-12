@@ -11,7 +11,7 @@ bookdown::gitbook:
       after: |
         <li><a href="https://michaelmccarthy.netlify.app" target="blank">Michael McCarthy</a></li>
     edit: https://github.com/mccarthy-m-g/bookdown-thesis-template/edit/master/%s
-    download: ["pdf"]
+    download: ["pdf", "word"]
 bookdown::pdf_book:
   pandoc_args: [ "--csl", "apa.csl" ]
   includes:
@@ -21,6 +21,6 @@ bookdown::pdf_book:
   keep_tex: yes
   extra_dependencies: ["flafter"]
   df_print: kable
-bookdown::epub_book:
-  stylesheet: style.css
+bookdown::word_document2:
+  reference_docx: style.docx
   pandoc_args: [ "--csl", "apa.csl" ]
