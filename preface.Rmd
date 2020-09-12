@@ -124,14 +124,19 @@ This template was written in [RStudio](http://www.rstudio.com/ide/) using [bookd
 This version of the template was built with `r R.version.string` and the following packages:
 
 ```{r, results="asis"}
-# code taken from: https://github.com/hadley/mastering-shiny/blob/master/introduction.Rmd
-deps <- desc::desc_get_deps()
-pkgs <- sort(deps$package[deps$type == "Imports"])
-pkgs <- sessioninfo::package_info(pkgs, dependencies = FALSE)
-df <- tibble(
-  package = pkgs$package,
-  version = pkgs$ondiskversion,
-  source = gsub("@", "\\\\@", pkgs$source)
+# read renv.lock
+renvLock <- jsonlite::read_json("renv.lock")
+# write R packages from renv.lock to r-packages.bib
+knitr::write_bib(names(renvLock$Packages), "r-packages.bib")
+# get location of package versions and sources
+pkg_version <- paste0("renvLock$Packages$", names(renvLock$Packages), "$Version")
+pkg_source <- paste0("renvLock$Packages$", names(renvLock$Packages), "$Repository")
+
+# create tibble of packages, their versions, and their source
+df <- tibble::tibble(
+  package = names(renvLock$Packages),
+  version = sapply(pkg_version, function(x) eval(parse(text = x))),
+  source = sapply(pkg_source, function(x) eval(parse(text = x)))
 )
 knitr::kable(df, format = "markdown")
 ```

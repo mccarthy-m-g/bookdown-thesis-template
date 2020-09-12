@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: ["references.bib"]
+bibliography: ["references.bib", "r-packages.bib"]
 biblio-style: "apa.csl"
 link-citations: yes
 github-repo: mccarthy-m-g/bookdown-thesis-template
