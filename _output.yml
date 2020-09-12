@@ -17,7 +17,7 @@ bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
-  citation_package: none
+  citation_package: default
   keep_tex: yes
   extra_dependencies: ["flafter"]
   df_print: kable
