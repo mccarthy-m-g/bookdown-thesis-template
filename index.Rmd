@@ -1,13 +1,37 @@
 --- 
 title: "Bookdown Thesis Template"
-author: "[Michael McCarthy](https://michaelmccarthy.netlify.app)"
+shorttitle: "Bookdown Thesis Template"
+
+author: John Doe^[Institution One, john@example.org]
+# author: 
+#    - name          : "Michael McCarthy"
+#      url: "https://michaelmccarthy.netlify.app"
+#      affiliation   : "University of Calgary"
+#     corresponding : yes    # Define only one corresponding author
+#     address       : "Department Psychology, University of Calgary, 2500 University Dr NW, Calgary, AB Canada, T2N 1N4"
+#     email         : "michael.mccarthy@ucalgary.ca"
+#     role:   # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+#       - Conceptualization
+#       - Project Administration
+#       - Software
+#       - Supervision
+#       - Validation
+#       - Writing - Original Draft Preparation
+#       - Writing - Review & Editing
+# 
+# affiliation       :
+#   - id            : "1"
+#     
+    
 date: "`r Sys.Date()`"
+
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 bibliography: ["references.bib", "r-packages.bib"]
 biblio-style: "apa.csl"
 link-citations: yes
+favicon: www/favicon.ico
 github-repo: mccarthy-m-g/bookdown-thesis-template
 description: "A bookdown thesis template for writing your thesis."
 ---
