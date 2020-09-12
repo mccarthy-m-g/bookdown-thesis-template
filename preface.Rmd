@@ -1,6 +1,6 @@
 # Preface {#preface}
 
-This template is written in [RMarkdown](https://rmarkdown.rstudio.com) with [bookdown](https://bookdown.org). It is automatically built from [source](https://github.com/mccarthy-m-g/musicians-compendium) and deployed online using [github actions](https://help.github.com/en/actions). The Bookdown Thesis Template is a collaborative effort and fixes and improvements can be contributed via pull request.
+This template is written in [R Markdown](https://rmarkdown.rstudio.com) with [bookdown](https://bookdown.org). It is automatically built from [source](https://github.com/mccarthy-m-g/musicians-compendium) and deployed online using [GitHub Actions](https://help.github.com/en/actions). The Bookdown Thesis Template is a collaborative effort and fixes and improvements can be contributed via pull request.
 
 ## How this template is organized
 
@@ -29,8 +29,14 @@ RStudio is an integrated development environment, or IDE, for R programming. Dow
 
 If you have not used RStudio before, the [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf) provides a nice overview of the program:
 
-```{r out.width="100%", out.height=1200}
-knitr::include_graphics("images/rstudio-ide.pdf")
+```{r out.width="100%"}
+knitr::include_graphics("images/rstudio-ide-1.png")
+```
+
+As well as keyboard shortcuts to help improve your productivity:
+
+```{r out.width="100%"}
+knitr::include_graphics("images/rstudio-ide-2.png")
 ```
 
 ### bookdown
@@ -61,10 +67,11 @@ These packages provide data on airline flights, world development, and baseball 
 
 
 
-should have some experience using [R](https://www.r-project.org), the [RStudio IDE](https://rstudio.com), and [GitHub](https://github.com). If you do not have experience with any of these, 
+should have some experience using [R](https://www.r-project.org), the [RStudio IDE](https://rstudio.com), and . If you do not have experience with any of these, 
 
 ### GitHub
 
+[GitHub](https://github.com) is...
 
 ### Netlify
 
