@@ -7,13 +7,15 @@ options(digits = 3)
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
-  cache = FALSE,
-  echo = FALSE,
-  fig.align = "left",
-  # fig.width = 6,
-  # fig.asp = 0.618,  # 1 / phi
+  cache = TRUE,
+  fig.retina = 0.8, # figures are either vectors or 300 dpi diagrams
+  dpi = 300,
+  out.width = "70%",
+  fig.align = 'center',
+  fig.width = 6,
+  fig.asp = 0.618,  # 1 / phi
   fig.show = "hold",
-  message = FALSE
+  eval.after = 'fig.cap' # so captions can use link to demos
 )
 
 options(dplyr.print_min = 6,
