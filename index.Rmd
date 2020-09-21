@@ -2,31 +2,21 @@
 title: "Bookdown Thesis Template"
 shorttitle: "Bookdown Thesis Template"
 
-author: John Doe^[Institution One, john@example.org]
-# author: 
-#    - name          : "Michael McCarthy"
-#      url: "https://michaelmccarthy.netlify.app"
-#      affiliation   : "University of Calgary"
-#     corresponding : yes    # Define only one corresponding author
-#     address       : "Department Psychology, University of Calgary, 2500 University Dr NW, Calgary, AB Canada, T2N 1N4"
-#     email         : "michael.mccarthy@ucalgary.ca"
-#     role:   # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
-#       - Conceptualization
-#       - Project Administration
-#       - Software
-#       - Supervision
-#       - Validation
-#       - Writing - Original Draft Preparation
-#       - Writing - Review & Editing
-# 
-# affiliation       :
-#   - id            : "1"
-#     
-    
-date: "`r Sys.Date()`"
+author:
+# Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+# You can format your author list in several ways; below are some examples:
+- |
+  First Last^[Corresponding author information],
+  University,  
+  Contributor Roles:  
+  - Conceptualization  
+  - Project Administration
+- |
+  First Last,
+  University^[CRediT Contributor Roles]
+- "First Last^[University, CRediT Contributor Roles]"
 
-
-
+date: "`r format(Sys.Date(), '%B %d %Y')`"
 
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -62,6 +52,8 @@ The Bookdown Thesis Template is a comprehensive bookdown template, covering ever
 - Integrated with the RStudio IDE.
 
 You can learn more about using bookdown to write your thesis in the short book [*bookdown: Authoring Books and Technical Documents with R Markdown*](https://bookdown.org/yihui/bookdown/).
+
+If you do not wish to publish your thesis to its own website, the R package [papaja](https://crsh.github.io/papaja_man/customizations.html#writing-dissertations) might be better for you.
 
 ## License {-}
 
