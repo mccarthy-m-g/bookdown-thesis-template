@@ -1,5 +1,4 @@
 bookdown::gitbook:
-  #base_format: distill::distill_article
   css: style.css
   includes:
     in_header: ["www/header.html"] # google_analytics.html
@@ -8,13 +7,14 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><strong><a href="./">Bookdown Thesis Template</a></strong></li>
+        <li><a href="./">Bookdown Thesis Template</a></li>
       after: |
         <li><a href="https://michaelmccarthy.netlify.app" target="blank">Michael McCarthy</a></li>
     edit: https://github.com/mccarthy-m-g/bookdown-thesis-template/edit/master/%s
     download: ["pdf", "docx"]
+    sharing: null
 bookdown::pdf_book:
-  # base_format: distill::distill_article
+  # base_format: papaja::apa6_pdf # Does not work right now
   pandoc_args: [ "--csl", "apa.csl" ]
   includes:
     in_header: preamble.tex
