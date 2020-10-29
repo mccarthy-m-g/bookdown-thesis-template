@@ -1,11 +1,10 @@
 # Preface {#preface}
 
-This template is written in [R Markdown](https://rmarkdown.rstudio.com) with [bookdown](https://bookdown.org). It is automatically built from [source](https://github.com/mccarthy-m-g/musicians-compendium) and deployed online using [GitHub Actions](https://help.github.com/en/actions). The Bookdown Thesis Template is a collaborative effort and fixes and improvements can be contributed via pull request.
+This template is written in [R Markdown](https://rmarkdown.rstudio.com) with [bookdown](https://bookdown.org). It is automatically built from [source](https://github.com/mccarthy-m-g/bookdown-thesis-template) and deployed online using [GitHub Actions](https://help.github.com/en/actions). The Bookdown Thesis Template is a collaborative effort and fixes and improvements can be contributed via pull request.
 
 ## How this template is organized
 
-gjhgf
-
+This template is organized into two main sections: The first being a guide on how to use this template for your own thesis, and the second being an example thesis section to give you an idea of how your thesis can look using this template. You can also check out the [source files](https://github.com/mccarthy-m-g/bookdown-thesis-template) for this template if you want to see the syntax for anything implemented here.
 
 ## Prerequisites
 
