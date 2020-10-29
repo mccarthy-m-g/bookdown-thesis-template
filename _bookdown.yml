@@ -2,9 +2,9 @@ book_filename: "bookdown-thesis-template"
 language:
   ui:
     chapter_name: " "
-delete_merged_file: true
+delete_merged_file: false
 
-new_session: yes
+new_session: no
 
 rmd_files: [
   index.Rmd,
@@ -12,9 +12,15 @@ rmd_files: [
 
   getting-started.Rmd,
   web-publishing.Rmd,
+  housekeeping.Rmd,
+
   writing-in-bookdown.Rmd,
+  useful-functions.Rmd,
 
   introduction.Rmd,
+  methodology.Rmd,
+  results.Rmd,
+  discussion.Rmd,
 
   references.Rmd,
 ]
