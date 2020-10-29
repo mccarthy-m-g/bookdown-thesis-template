@@ -1,5 +1,7 @@
+# (PART) Using bookdown {-}
+
 # Writing in bookdown
 
-## Housekeeping
+## Referencing
 
-Now that your template is all set up, you can delete or modify some of the existing files in the template.
+You can reference any of the packages included in your `renv.lock` file using the the following syntax `[@R-packagename]`.

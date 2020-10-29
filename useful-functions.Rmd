@@ -1,2 +1,16 @@
-# Useful Functions
+# Useful Functions and Packages
+
+## Citation packages
+
+### rbbt
+
+### citr
+
+## Plotting packages
+
+### ggplot2
+
+## Statistics packages
+
+### effectsize
 
