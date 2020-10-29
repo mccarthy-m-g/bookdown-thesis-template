@@ -2,3 +2,29 @@
 
 # Introduction
 
+This section of the Bookdown Thesis Template includes a mock thesis that you can use as the skeleton for your thesis. It makes use of the papaja package [@R-papaja] to print important numbers and statistics using values from code---this means that if any numbers in the code change, so too will those numbers change in the body of the thesis.
+
+For this thesis we will simulate data for a two group between-subjects experiment. Here is the code to simulate our data: 
+
+```{r simulate-data}
+# load package
+library(dplyr)
+# seed for random number generation
+set.seed(43)
+# create dataset
+df_ind_t.test <- tibble::tibble(ID = 1:100,
+                                Gender = c(rep("Male", 40),
+                                           rep("Female", 60)
+                                           ),
+                                IV = c(rep("A", 50),
+                                       rep("B", 50)
+                                       ),
+                                DV = c(round(rnorm(n = 50, mean = 150, sd = 20)),
+                                       round(rnorm(n = 50, mean = 100, sd = 17))
+                                       )
+                                )
+# encode IV as a factor
+df_ind_t.test$IV <- factor(df_ind_t.test$IV, levels = c("A", "B"))
+```
+
+For this experiment we will test the hypothesis that participants in group A had significantly higher scores on the dependent variable than participants in group B.

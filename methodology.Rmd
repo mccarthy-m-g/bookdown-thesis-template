@@ -1,2 +1,10 @@
 # Methodology
 
+```{r participants, echo=FALSE}
+participant_total <- nrow(df_ind_t.test)
+males_total <- df_ind_t.test %>% filter(Gender == "Male") %>% nrow()
+females_total <- df_ind_t.test %>% filter(Gender == "Female") %>% nrow()
+participant_exclusion_total <- as.integer(0)
+```
+
+`r papaja::printnum(participant_total)` participants (`r papaja::printnum(males_total)` Males, `r papaja::printnum(females_total)` Females) from the community participated in exchange for $20. Data for `r papaja::printnum(participant_exclusion_total, numerals = FALSE)` of these participants were excluded due to meeting predetermined exclusion criteria. All participants were randomly assigned to a condition using a double-blind procedure.^[Note: All the numbers in this section, including the "zero" were printed using inline R code. The advantage of this is that, since the numbers are determined by code, if there are any changes to the code or data, any resulting changes to the numbers in the body of your thesis will be automatically updated. To see how this works, see the source file `methodology.Rmd`.]

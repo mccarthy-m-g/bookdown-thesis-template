@@ -1,6 +1,48 @@
 # Results
 
-```{r}
-library(tidyverse)
+```{r descriptive-statistics, echo=FALSE}
+# get descriptive statistics for each group -----------------------------------
+descriptive_statistics_table <- df_ind_t.test %>%
+  group_by(IV) %>%
+  summarise(n = dplyr::n(),
+            Mean = mean(DV),
+            Variance = sd(DV)^2,
+            SD = sd(DV),
+            SE = sd(DV)/sqrt(dplyr::n()),
+            CI.lower = mean(DV) - (abs(qnorm((1-0.95)/2)) * sd(DV)/sqrt(dplyr::n())),
+            CI.upper = mean(DV) + (abs(qnorm((1-0.95)/2)) * sd(DV)/sqrt(dplyr::n()))
+            )
+descriptive_statistics <- purrr::transpose(dplyr::select(descriptive_statistics_table, !IV))
+names(descriptive_statistics) <- descriptive_statistics_table$IV
+
+# get summary statistics for the entire sample --------------------------------
+summary_statistics_G <- df_ind_t.test %>%
+  summarise(N = nrow(.),
+            Grand.Mean = mean(DV),
+            Grand.Variance = sd(DV)^2,
+            Grand.SD = sd(DV),
+            Grand.SE = sd(DV)/sqrt(nrow(.)),
+            Grand.CI.lower = mean(DV) - (abs(qnorm((1-0.95)/2)) * sd(DV)/sqrt(nrow(.))),
+            Grand.CI.upper = mean(DV) + (abs(qnorm((1-0.95)/2)) * sd(DV)/sqrt(nrow(.)))
+            ) %>%
+  as.list()
 ```
 
+```{r run-ttest}
+# run ttest
+model <- t.test(DV ~ IV, data = df_ind_t.test)
+# get effect size
+model_effsize <- effectsize::cohens_d(DV ~ IV, data = df_ind_t.test)$Cohens_d
+# set the significance level for the omnibus ANOVA
+sig_level <- 0.05
+# test significance
+model_p.value <- broom::tidy(model)$p.value
+model_significance <- model_p.value < sig_level
+
+# PRINTING --------------------------------------------------------------------
+# concatenate omnibus ANOVA and effect sizes into an APA string
+print_model <- paste0(papaja::apa_print(model)$statistic, ", $d = ",
+                      sprintf("%.2f", round(model_effsize, 2)), "$")
+```
+
+An independent t-test was used to test the hypothesis that participants in group A had significantly higher scores on the dependent variable than participants in group B. Results of the t-test show that the hypothesis was supported, with scores in group A ($M = `r papaja::printnum(descriptive_statistics$A$Mean)`$, $SD = `r papaja::printnum(descriptive_statistics$A$SD)`$) being significantly higher than scores in group B ($M = `r papaja::printnum(descriptive_statistics$B$Mean)`)$, $SD = `r papaja::printnum(descriptive_statistics$B$SD)`$), `r print_model`.
