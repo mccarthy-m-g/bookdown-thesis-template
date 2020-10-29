@@ -3,10 +3,17 @@
 One of the easiest ways to share and get feedback on your thesis is by publishing it as its own website. bookdown---in tandem with GitHub and Netlify---makes this easy to do, even if you don't have prior experience with web publishing:
 
 1. Complete Steps 1-6 in [Getting Started With Git][With Git (Recommended)].
+
 2. Create a Netlify account, using your GitHub account to sign up.
+
 3. Create a new Netlify site without connecting to Git by dragging an empty folder into the "Want to deploy a new site without connecting to Git? Drag and drop your site folder here" box.
+
 4. Add your [Netlify API ID](https://docs.netlify.com/cli/get-started/#link-with-an-environment-variable) and a [Netlify Authorization Token](https://docs.netlify.com/cli/get-started/#obtain-a-token-in-the-netlify-ui) to your [GitHub Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) in your repository.
+
 5. Modify the R version on line 16 of `.github/workflows/bookdown.yaml` to match the R version you plan to use for this project.
+
 6. Either (a) use `renv::restore()` to re-install the exact packages declared in the project lockfile `renv.lock`^[You may also need to find and install the older version of R used previously with that project, unless your intention is to upgrade R.], or (b) use `renv::init()` to re-initialize the project with a brand new project library^[You may need to reinstall the bookdown and tinytex packages after re-initializing to ensure they are stored in the project's lockfile].
+
 7. Commit and push any changes to your repository---this will trigger GitHub Actions to build your book and deploy it to Netlify.
+
 8. Replace the GitHub Actions build status badge and Netlify deployment status badge in `README.md` with the badge URLs from your own GitHub repository and Netlify site.
