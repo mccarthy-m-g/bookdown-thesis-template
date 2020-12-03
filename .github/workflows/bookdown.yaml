@@ -31,9 +31,9 @@ jobs:
         with:
           pandoc-version: '2.10.1'
 
-      - name: Install pandoc citeproc
-        run: |
-          brew install pandoc-citeproc
+      #- name: Install pandoc citeproc
+      #  run: |
+      #    brew install pandoc-citeproc
 
       - name: Cache Renv packages
         uses: actions/cache@v1
