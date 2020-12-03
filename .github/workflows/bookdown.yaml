@@ -25,10 +25,14 @@ jobs:
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
+      
+      - name: Setup pandoc
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.10.1'
 
-      - name: Install pandoc and pandoc citeproc
+      - name: Install pandoc citeproc
         run: |
-          brew install pandoc
           brew install pandoc-citeproc
 
       - name: Cache Renv packages
